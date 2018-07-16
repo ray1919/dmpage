@@ -5,13 +5,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ## [Unreleased]
 
+### Expected
+- fetch img url data
+- fetch list table
+
+## [0.0.2] - 2018-07-16
+### Added
+- fetch dm page using router /page/id
+
 ## [0.0.1] - 2018-07-16
 ### Added
 - page service to provide data
 - IPage interface format the data
 - page component to page view
 
-### Expected
-- fetch data using id
-- fetch img url data
-- fetch list table
