@@ -1,3 +1,4 @@
+<ng-container>{{ errorMsg }}</ng-container>
 <div *ngFor="let page of pagevar">
   <ng-container *ngIf="page.title.substr(0,1) != '*'">
     <p>{{page | json}}</p>

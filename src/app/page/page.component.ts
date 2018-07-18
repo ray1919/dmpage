@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { PageService } from '../page.service';
 import { IPage } from '../page';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { PageService } from '../page.service';
 
 @Component({
   selector: 'app-page',
@@ -12,6 +12,7 @@ import { Location } from '@angular/common';
 export class PageComponent implements OnInit {
 
   public pagevar: IPage[] = [];
+  public errorMsg;
 
   constructor(
     private _pageService: PageService,
@@ -21,7 +22,8 @@ export class PageComponent implements OnInit {
   ngOnInit() {
     const id = +this.route.snapshot.paramMap.get('id');
     this._pageService.getPage(id)
-      .subscribe(data => this.pagevar = data['dm_page']);
+      .subscribe(data => this.pagevar = data['dm_page'],
+                  error => this.errorMsg = error);
   }
 
 }

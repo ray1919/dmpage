@@ -8,6 +8,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 ### Expected
 - fetch img url data
 - fetch list table
+- search list table
+
+## [0.0.3] - 2018-07-18
+### Added
+- page service error handling
 
 ## [0.0.2] - 2018-07-16
 ### Added
