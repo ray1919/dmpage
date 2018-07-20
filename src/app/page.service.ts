@@ -30,7 +30,7 @@ export class PageService {
   }
 
   getPage(id: number): Observable<IPage[]> {
-    const _url1 = 'http://192.168.1.178/scripts/api.php/dm_page?filter=drug_id,eq,';
+    const _url1 = 'http://acebiox.cn/scripts/api.php/dm_page?filter=drug_id,eq,';
     const _url2 = '&order[]=id,asc&transform=1';
     const _url = _url1 + id + _url2;
     return this.http.get<any>(_url)
@@ -41,7 +41,7 @@ export class PageService {
   }
 
   getName(id: number): Observable<IList> {
-    const _url1 = 'http://192.168.1.178/scripts/api.php/dm_list?filter=id,eq,';
+    const _url1 = 'http://acebiox.cn/scripts/api.php/dm_list?filter=id,eq,';
     const _url2 = '&transform=1';
     const _url = _url1 + id + _url2;
     return this.http.get<any>(_url)
@@ -52,7 +52,7 @@ export class PageService {
   }
 
   getImage(id: number): Observable<IImage[]> {
-    const _url1 = 'http://192.168.1.178/scripts/api.php/dm_image?filter=drug_id,eq,';
+    const _url1 = 'http://acebiox.cn/scripts/api.php/dm_image?filter=drug_id,eq,';
     const _url2 = '&columns=fig_id,filename&transform=1&order[]=fig_id,asc';
     const _url = _url1 + id + _url2;
     return this.http.get<any>(_url)
@@ -66,7 +66,7 @@ export class PageService {
     if (!term.trim()) {
       return of([]);
     }
-    const nameurl = `http://192.168.1.178/scripts/api.php/dm_list?filter[]=status,eq,1&filter[]=name,cs,${term}&exclude=status&transform=1`;
+    const nameurl = `http://acebiox.cn/scripts/api.php/dm_list?filter[]=status,eq,1&filter[]=name,cs,${term}&exclude=status&transform=1`;
     return this.http.get<any>(nameurl)
       .pipe(
         map(res => res.dm_list),
@@ -80,7 +80,7 @@ export class PageService {
       return of([]);
     }
     // tslint:disable-next-line:max-line-length
-    const nameurl = `http://192.168.1.178/scripts/api.php/dm_list?filter[]=status,eq,1&filter[]=chinese,cs,${term}&exclude=status&transform=1`;
+    const nameurl = `http://acebiox.cn/scripts/api.php/dm_list?filter[]=status,eq,1&filter[]=chinese,cs,${term}&exclude=status&transform=1`;
     return this.http.get<any>(nameurl)
       .pipe(
         map(res => res.dm_list),
@@ -94,7 +94,7 @@ export class PageService {
       return of([]);
     }
     // tslint:disable-next-line:max-line-length
-    const nameurl = `http://192.168.1.178/scripts/api.php/dm_list?filter[]=status,eq,1&filter[]=class,cs,${term}&exclude=status&transform=1`;
+    const nameurl = `http://acebiox.cn/scripts/api.php/dm_list?filter[]=status,eq,1&filter[]=class,cs,${term}&exclude=status&transform=1`;
     return this.http.get<any>(nameurl)
       .pipe(
         map(res => res.dm_list),

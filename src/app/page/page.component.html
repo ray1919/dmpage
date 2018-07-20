@@ -5,38 +5,29 @@
 </div>
 
 <div *ngFor="let page of pagevar" class="row">
-  <div class="row">
-      <div class="col">
-      <ng-container *ngIf="page.title.substr(0,1) != '*'">
-        <h3>{{page.title}}</h3>
-        <p *ngFor="let p1 of page.content.split('\n') ">
-          {{ p1 }}
-        </p>
-      </ng-container>
-    </div>
+  <div *ngIf="page.title.substr(0,1) != '*'" class="col">
+      <h3>{{page.title}}</h3>
+      <p *ngFor="let p1 of page.content.split('\n') ">
+        {{ p1 }}
+      </p>
   </div>
 </div>
 
-<div *ngFor="let img of imgvar; let i=index">
-  <div class="row">
-    <div class="col">
-      <figure class="figure">
-        <img src="/assets/img/dm/{{img.filename}}" class="figure-img img-fluid rounded" alt="Figure {{img.fig_id}}" width=100%>
-        <figcaption class="figure-caption text-center">图{{img.fig_id}}</figcaption>
-      </figure>
-    </div>
+<div *ngIf="imgvar?.length > 0" class="row">
+  <div class="col">
+    <h3>CPIC的用药指导原文</h3>
+    <figure *ngFor="let img of imgvar" class="figure">
+      <img src="/assets/img/dm/{{img.filename}}" class="figure-img img-fluid rounded" alt="Figure {{img.fig_id}}" width=100%>
+      <figcaption class="figure-caption text-center">图{{img.fig_id}}</figcaption>
+    </figure>
   </div>
 </div>
 
-<div *ngFor="let page of pagevar">
-  <div class="row">
-    <div class="col">
-      <ng-container *ngIf="page.title.substr(0,1) == '*'">
-        <h3>{{page.title}}</h3>
-        <p *ngFor="let p1 of page.content.split('\n') ">
-          {{ p1 }}
-        </p>
-      </ng-container>
-    </div>
+<div *ngFor="let page of pagevar" class="row">
+  <div *ngIf="page.title.substr(0,1) == '*'" class="col">
+      <h3>{{page.title}}</h3>
+      <p *ngFor="let p1 of page.content.split('\n') ">
+        {{ p1 }}
+      </p>
   </div>
 </div>
