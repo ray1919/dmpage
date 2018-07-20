@@ -5,7 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ## [Unreleased]
 
-### Expected
+## [0.1.0] - 2018-07-20
+### Added
 - fetch img url data
 - fetch list table
 - search list table

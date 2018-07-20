@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col">
+    <h2 class="text-center">用药基因信息库</h2>
+  </div>
+</div>
+<hr>
+<div class="input-group input-group-lg">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-lg">药物英文名：</span>
+  </div>
+  <input #searchBox1 (keyup)="searchName(searchBox1.value)" type="text" placeholder="warfarin" class="form-control" aria-label="Search by name" aria-describedby="inputGroup-sizing-lg">
+</div>
+<br>
+<div class="input-group input-group-lg">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-lg">药物中文名：</span>
+  </div>
+  <input #searchBox2 (keyup)="searchChinese(searchBox2.value)" type="text" placeholder="华法林" class="form-control" aria-label="Search by Chinese" aria-describedby="inputGroup-sizing-lg">
+</div>
+<br>
+<div class="input-group input-group-lg">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-lg">药物类型：&nbsp; &nbsp; </span>
+  </div>
+  <input #searchBox3 (keyup)="searchClass(searchBox3.value)" type="text" placeholder="抗抑郁药" class="form-control" aria-label="Search by class" aria-describedby="inputGroup-sizing-lg">
+</div>
+<hr>
+<ul class="list-group">
+  <li *ngFor="let row of rows$ | async" class="list-group-item">
+    <a routerLink="/page/{{row.id}}">
+      {{row.class}}: {{row.chinese}}({{row.name}})
+    </a>
+  </li>
+  <li *ngFor="let chinese of chineses$ | async" class="list-group-item">
+    <a routerLink="/page/{{chinese.id}}">
+      {{chinese.class}}：{{chinese.chinese}}（{{chinese.name}}）
+    </a>
+  </li>
+  <li *ngFor="let class of classs$ | async" class="list-group-item">
+    <a routerLink="/page/{{class.id}}">
+      {{class.class}}：{{class.chinese}}（{{class.name}}）
+    </a>
+  </li>
+</ul>
+
+<hr>
