@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col">
+    <p class="text-right">
+      <button (click)="goBack()" class="btn btn-light">返回</button>
+    </p>
+    <table class="table table-responsive">
+      <tr>
+        <th>药物中文名</th><th>药物英文名</th><th>药物类别</th>
+      </tr>
+      <tr *ngFor="let row of druglist">
+        <td><a href="../page/{{row.id}}">{{row.chinese}}</a></td><td>{{row.name}}</td><td>{{row.class}}</td>
+      </tr>
+    </table>
+    <hr>
+  </div>
+</div>

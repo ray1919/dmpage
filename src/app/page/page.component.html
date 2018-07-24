@@ -2,6 +2,9 @@
   <div class="col">
     <h2 class="text-center">{{namevar?.class}}-{{ namevar?.chinese }}</h2>
   </div>
+  <p class="text-right">
+    <button (click)="goBack()" class="btn btn-light">返回</button>
+  </p>
 </div>
 
 <div *ngFor="let page of pagevar" class="row">

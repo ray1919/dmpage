@@ -42,4 +42,7 @@ export class PageComponent implements OnInit {
     );
   }
 
+  goBack(): void {
+    this.location.back();
+  }
 }

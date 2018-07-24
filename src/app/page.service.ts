@@ -29,6 +29,15 @@ export class PageService {
       error.message || 'Something bad happened; please try again later.');
   }
 
+  getList(): Observable<IList[]> {
+    const _url = 'http://acebiox.cn/scripts/api.php/dm_list?filter=status,eq,1&exclude=status&transform=1';
+    return this.http.get<any>(_url)
+      .pipe(
+        map(res => res.dm_list),
+        catchError(this.handleError)
+      );
+  }
+
   getPage(id: number): Observable<IPage[]> {
     const _url1 = 'http://acebiox.cn/scripts/api.php/dm_page?filter=drug_id,eq,';
     const _url2 = '&order[]=id,asc&transform=1';
