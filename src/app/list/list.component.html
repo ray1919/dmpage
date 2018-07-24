@@ -1,7 +1,12 @@
 <div class="row">
   <div class="col">
     <h2 class="text-center">用药基因信息库</h2>
-    <p>人们对于相同药物，可能有不同的反应：对有的人非常有效，有的人似乎没有多大的改善，甚至有的人可能产生严重的不良反应。产生这种差异的直接原因是人们体内药物代谢的酶活性不同，根本原因是决定这些酶活性的基因不同。全世界的药物基因组科学家们搜集了跟各种药物代谢相关的基因，找出不同人之间的基因差异和对药物不同反应之间的内在联系，并建立了指南，根据这些基因差异预测个体对药物的反应能力，从而指导精准用药。本网站将这些信息整理成数据库，方便大众查阅。</p>
+    <p>人们对于相同药物，可能有不同的反应：对有的人非常有效，有的人似乎没有多大的改善，
+      甚至有的人可能产生严重的不良反应。产生这种差异的直接原因是人们体内药物代谢的酶活性不同，
+      根本原因是决定这些酶活性的基因不同。全世界的药物基因组科学家们搜集了跟各种药物代谢相关的
+      基因，找出不同人之间的基因差异和对药物不同反应之间的内在联系，并建立了指南，根据这些基因
+      差异预测个体对药物的反应能力，从而指导精准用药。本网站将这些信息整理成数据库，方便大众查阅。
+    </p>
     <hr>
   </div>
 </div>
@@ -10,7 +15,7 @@
   <div class="col">
     <div class="alert alert-secondary alert-dismissible fade show" role="alert">
       请在下方输入关键词，检索结果会自动出现在搜索框下方。
-      如果您不确定可以点击查看我们收录的<a href="druglist">药物列表</a>。
+      如果您不确定可以点击查看我们收录的<a routerLink="druglist">药物列表</a>。
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -29,7 +34,7 @@
     </div>
     <ul class="list-group">
       <li *ngFor="let row of rows$ | async" class="list-group-item">
-        <a routerLink="/page/{{row.id}}">
+        <a routerLink="page/{{row.id}}">
           {{row.class}}: {{row.chinese}}({{row.name}})
         </a>
       </li>
